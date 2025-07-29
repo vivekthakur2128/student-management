@@ -30,9 +30,12 @@ function checkForLoginCredentials(userId, password){
     .then(data => {
       if (data.match) {
         console.log("Match found!");
+        console.log(window.location.href);
+        window.location.href = "/student-management/manage-student/manage-student.html";
       } else {  
         console.log("No match.");
         alert("userId or password is incorrect");
+        document.getElementById("admin-panel-Form").reset();
       }
     });
 }
